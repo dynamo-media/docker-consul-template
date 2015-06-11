@@ -2,7 +2,7 @@ FROM debian:wheezy
 
 ENV CONSUL_TEMPLATE_VERSION 0.10.0
 
-RUN apt-get update && apt-get install wget \
+RUN apt-get update && apt-get install -y wget \
     && wget -O /tmp/ct.tar.gz https://github.com/hashicorp/consul-template/releases/download/v${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.tar.gz \
     && tar -xf /tmp/ct.tar.gz -C /tmp \
     && mv /tmp/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64/consul-template /usr/local/bin/ \
